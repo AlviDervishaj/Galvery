@@ -1,14 +1,13 @@
-
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
 } from '@clerk/nextjs'
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
 
 import { Inter } from "next/font/google";
+import { ourFileRouter } from './api/uploadthing/core';
+import { extractRouterConfig } from 'uploadthing/server';
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
+      <NextSSRPlugin
+        routerConfig={extractRouterConfig(ourFileRouter)}
+      />
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>{children}</body>
       </html>
