@@ -1,3 +1,11 @@
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -8,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Alvi - Gallery",
-  description: "Gallery app with NextJs for a side project",
+  title: "Galvery",
+  description: "Galvery",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -19,8 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`font-sans ${inter.variable}`}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
