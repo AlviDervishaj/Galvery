@@ -9,7 +9,9 @@ export function Navigation() {
       <div>
         {/* Signed out components */}
         <SignedOut>
-          <SignInButton />
+          <div className="p-2">
+            <SignInButton />
+          </div>
         </SignedOut>
         <SignedIn>
           <div className="p-2 flex items-center">
