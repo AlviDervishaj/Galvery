@@ -2,7 +2,6 @@ import {
   ClerkProvider,
 } from '@clerk/nextjs'
 import "~/styles/globals.css";
-import "@uploadthing/react/styles.css";
 
 import { Inter } from "next/font/google";
 import { ourFileRouter } from './api/uploadthing/core';

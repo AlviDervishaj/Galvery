@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { db } from "~/server/db";
+import { getMyImages } from "~/server/queries";
 export async function Images() {
-  const images = await db.query.images.findMany();
+  const images = await getMyImages();
   return (
     <div className="flex flex-wrap items-center content-center justify-evenly gap-4 h-fit w-full relative">
       {images.map((image) => (<div key={image.id} className={"w-30 h-30"}>
