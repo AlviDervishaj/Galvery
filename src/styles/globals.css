@@ -6,3 +6,8 @@
 body {
   @apply bg-black text-slate-200;
 }
+
+dialog {
+  max-width: 100dvw;
+  max-height: 100dvh;
+}

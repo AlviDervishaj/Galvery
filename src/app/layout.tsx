@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 import { ourFileRouter } from './api/uploadthing/core';
 import { extractRouterConfig } from 'uploadthing/server';
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
+import { Navigation } from './_components/Navigation';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       />
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
+          <Navigation />
           {children}
           {modal}
           <div id="modal-root" />
