@@ -1,5 +1,5 @@
 import { Modal } from "./modal";
-import { PullPageImageView } from "~/app/_components/fullImagePage";
+import { FullPageImageView } from "~/app/_components/FullImagePage";
 
 export default function PhotoModal({
   params: { id: photoId },
@@ -11,7 +11,7 @@ export default function PhotoModal({
   if (Number.isNaN(idAsNumber)) throw new Error("Invalid photo ID");
   return (
     <Modal>
-      <PullPageImageView id={idAsNumber} />
+      <FullPageImageView id={idAsNumber} />
     </Modal>
   )
 }

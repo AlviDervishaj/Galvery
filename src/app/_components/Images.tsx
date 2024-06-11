@@ -5,23 +5,21 @@ import { getMyImages } from "~/server/queries";
 export async function Images() {
   const images = await getMyImages();
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="w-full gap-4 p-4 masonry">
       {images.map((image) => (
-        <div key={image.id} className="flex h-48 w-48 flex-col">
-          <Link href={`/img/${image.id}`}>
+        <div key={image.id} className="flex h-52 w-52 flex-col items-center content-center justify-center grid-item pb-4">
+          <Link href={`/img/${image.id}`} className="h-44 w-44 relative text-center">
             <Image
               src={image.url}
+              style={{ objectFit: "contain" }}
+              width={176}
+              height={176}
+              className="rounded-md h-44"
               alt={image.name}
-              loading={"lazy"}
-              style={{ objectFit: "cover" }}
-              width={192}
-              height={192}
             />
           </Link>
-          <div>{image.name}</div>
         </div>
-      ))
-      }
-    </div >
-  );
+      ))}
+    </div>
+  )
 }

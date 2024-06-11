@@ -34,8 +34,12 @@ export default function RootLayout({
       />
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
-          <Navigation />
-          {children}
+          <div className="h-screen grid grid-rows-[auto,1fr]">
+            <Navigation />
+            <main className="overflow-y-scroll">
+              {children}
+            </main>
+          </div>
           {modal}
           <div id="modal-root" />
         </body>
