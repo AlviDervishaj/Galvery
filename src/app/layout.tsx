@@ -7,6 +7,7 @@ import { ourFileRouter } from './api/uploadthing/core';
 import { extractRouterConfig } from 'uploadthing/server';
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { Navigation } from './_components/Navigation';
+import { Toaster } from '~/components/ui/sonner';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,8 +33,8 @@ export default function RootLayout({
         routerConfig={extractRouterConfig(ourFileRouter)}
       />
       <html lang="en">
-        <body className={`font-sans ${inter.variable}`}>
-          <div className="h-screen grid grid-rows-[auto,1fr]">
+        <body className={`font-sans ${inter.variable} dark`}>
+          <div className="h-screen">
             <Navigation />
             <main className="overflow-y-scroll">
               {children}
@@ -41,6 +42,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
