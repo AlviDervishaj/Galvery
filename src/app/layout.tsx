@@ -1,6 +1,5 @@
-import {
-  ClerkProvider,
-} from '@clerk/nextjs'
+import {ClerkProvider} from '@clerk/nextjs'
+import {dark } from "@clerk/themes";
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -28,7 +27,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{baseTheme: dark}}>
       <NextSSRPlugin
         routerConfig={extractRouterConfig(ourFileRouter)}
       />

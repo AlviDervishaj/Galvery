@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.4",
+    "@clerk/themes": "^2.1.9",
     "@sentry/nextjs": "^8.9.1",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@uploadthing/react": "^6.6.0",

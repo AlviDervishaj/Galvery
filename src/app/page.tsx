@@ -1,4 +1,3 @@
-import { Navigation } from "./_components/Navigation";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { Images } from "./_components/Images";
 
@@ -9,7 +8,7 @@ export default async function HomePage() {
     <main className="w-full h-full">
       <SignedOut>
         <div className="w-full h-full p-2 text-3xl font-bold text-center">
-          <h1>Please Sign In.</h1>
+          <h1>Please sign in to get started.</h1>
         </div>
       </SignedOut>
       <SignedIn>
