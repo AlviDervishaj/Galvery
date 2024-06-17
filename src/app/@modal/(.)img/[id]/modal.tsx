@@ -13,6 +13,13 @@ export function Modal({ children }: { children: React.ReactNode }) {
       dialogRef.current?.showModal();
     }
   }, []);
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+      return;
+    };
+  }, []);
 
   function onDismiss() {
     router.back();
@@ -20,7 +27,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
 
   return createPortal(
     <dialog ref={dialogRef}
-      className="m-0 h-screen w-screen bg-black/80 text-white"
+      className="m-0 h-screen w-screen bg-black/80 text-white overflow-y-hidden relative"
       onClose={onDismiss}>
       {children}
     </dialog>,
