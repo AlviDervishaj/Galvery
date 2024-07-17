@@ -4,7 +4,6 @@ import { useUploadThing } from "~/utils/uploadthings";
 import { UploadSVG } from "./UploadSVG";
 import { toast } from "sonner";
 import { LoadingSpinnerSVG } from "./LoadingSpinner";
-import { useState } from "react";
 
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>;
@@ -61,8 +60,18 @@ export function UploadButton() {
       });
     },
     onClientUploadComplete() {
+      // remove other toasts
       toast.dismiss(`upload-begin`);
-      toast("Upload Complete !");
+      toast.dismiss(`error`);
+      toast.success(<div className="flex gap-2 text-center text-white items-center">
+        <LoadingSpinnerSVG /> <span className="text-lg">
+          Upload Successfull
+        </span>
+      </div>, {
+        richColors: true,
+        duration: 2000,
+        id: `error`
+      });
       router.refresh();
     }
   });

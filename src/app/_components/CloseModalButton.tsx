@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export function CloseModalButton() {
   const router = useRouter();
   function closeModalButton() {
-    router.push("/");
+    router.back();
   }
   return (
     <div className="z-[999] absolute top-0 left-0 backdrop-blur-[2px] md:top-5 md:left-[90%] lg:left-[93.5%] p-2">

@@ -34,9 +34,9 @@ export default function RootLayout({
       />
       <html lang="en">
         <body className={`font-sans ${inter.variable} dark`}>
-          <div className="h-screen">
+          <div className="min-h-screen max-h-full">
             <Navigation />
-            <main className="overflow-y-scroll">
+            <main className="overflow-y-auto overflow-x-hidden">
               {children}
             </main>
           </div>
